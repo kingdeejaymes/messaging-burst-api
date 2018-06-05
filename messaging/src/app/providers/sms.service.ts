@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpParams} from "@angular/common/http";
-import { ApiService } from "./api.service";
+import { HttpParams} from '@angular/common/http';
+import { ApiService } from './api.service';
 
 @Injectable()
 export class SmsService {

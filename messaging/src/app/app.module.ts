@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SmsSendComponent } from './components/sms-send/sms-send.component';
-import { ApiService } from "./providers/api.service";
-import { SmsService } from "./providers/sms.service";
+import { ApiService } from './providers/api.service';
+import { SmsService } from './providers/sms.service';
 
 @NgModule({
   declarations: [

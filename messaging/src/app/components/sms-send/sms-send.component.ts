@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SmsService } from "../../providers/sms.service";
+import { SmsService } from '../../providers/sms.service';
 
 @Component({
   selector: 'app-sms-send',
