@@ -1,0 +1,36 @@
+<div class="container-fluid  border border-info">
+  <br>
+  <div class="container">
+    <div class="col-6">
+      <label>
+        Message: <textarea [(ngModel)]="message" maxlength="459" rows="4"
+                           class="form-control" placeholder="Please enter your message here"></textarea>
+      </label>
+      <span *ngIf="isEmptyMessage"><small><i>This is required!</i></small></span>
+    </div>
+    <div class="col-6">
+      <small>You have <b>{{ 459 - message.length }}</b> remaining characters equivalent to 3 SMS</small>
+    </div>
+    <br>
+    <div class="col-6">
+      <label>
+        Recipient Number: <input [(ngModel)]="to" type="text" class="form-control" placeholder="Recipient number">
+      </label>
+      <span *ngIf="isEmptyTo"><small><i>This is required!</i></small></span>
+    </div>
+    <br>
+    <div class="col-6">
+      <button (click)="sendSMS()" [disabled]="sendBtnWasClicked" class="btn btn-info">Send Message</button>
+    </div>
+  </div>
+  <br>
+</div>
+<br>
+<div class="container" *ngIf="smsSent">
+  <div class="alert alert-info col-6" role="alert">
+    SMS message successfully sent!
+  </div>
+</div>
+
+
+
