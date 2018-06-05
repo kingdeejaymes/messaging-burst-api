@@ -8,7 +8,7 @@ import { SmsService } from '../../providers/sms.service';
 })
 export class SmsSendComponent implements OnInit {
 
-  to: string = null;
+  to: string = '';
   message: string = '';
   isEmptyMessage: boolean = false;
   isEmptyTo: boolean = false;
@@ -35,6 +35,11 @@ export class SmsSendComponent implements OnInit {
 
   }
 
+  clearFields() {
+    this.to = '';
+    this.message = '';
+  }
+
   isValidFields() {
     this.isEmptyMessage = false;
     this.isEmptyTo = false;
@@ -43,7 +48,7 @@ export class SmsSendComponent implements OnInit {
       this.isEmptyMessage = true;
       return false;
     }
-    if (this.to == null) {
+    if (this.to === '') {
       this.sendBtnWasClicked = false;
       this.isEmptyTo = true;
       return false;
