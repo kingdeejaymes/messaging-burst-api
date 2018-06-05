@@ -18,7 +18,7 @@ export class ApiService {
     const auth_token = environment.auth_token;
     const cors_url = environment.cors_url;
     const api_url = environment.api_url;
-    this.combined_cors_api_url = api_url;
+    this.combined_cors_api_url = cors_url + api_url; // we need this to bypass cors issue
     this.bitly_shorten_api = environment.bitly_shorten_api;
     this.bitly_access_token = environment.bitly_access_token;
     this.headers = this.headers.set('Content-Type', 'application/json')
