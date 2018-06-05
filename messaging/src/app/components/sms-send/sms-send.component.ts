@@ -27,7 +27,7 @@ export class SmsSendComponent implements OnInit {
       this.smsService.send_sms(this.to, this.message).subscribe(response => {
         console.log('Response =====> ', response);
         this.sendBtnWasClicked = false;
-        if (response['error'].code == 'SUCCESS') {
+        if (response['error'].code === 'SUCCESS') {
           this.smsSent = true; // flag to show the confirmation message
         }
       });
@@ -38,7 +38,7 @@ export class SmsSendComponent implements OnInit {
   isValidFields() {
     this.isEmptyMessage = false;
     this.isEmptyTo = false;
-    if (this.message == '') {
+    if (this.message === '') {
       this.sendBtnWasClicked = false;
       this.isEmptyMessage = true;
       return false;
