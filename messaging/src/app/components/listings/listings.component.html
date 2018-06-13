@@ -1,0 +1,14 @@
+<br>
+<div class="container-fluid  border border-info">
+  <div class="container">
+    <h2>Listings</h2>
+    <ul *ngFor="let item of lists">
+      <li>
+        <span>Name: {{ item.name }}</span><br>
+        <span>Creation Date: {{ item.created }}</span><br>
+        <span>Active Members: {{ item.members_active }}</span><br>
+        <span>Total Members: {{ item.members_total }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

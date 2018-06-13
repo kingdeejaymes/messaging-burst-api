@@ -19,4 +19,8 @@ export class SmsService {
 
   }
 
+  get_lists() {
+    return this.apiService.call('/get-lists.json', 'GET', null);
+  }
+
 }

@@ -30,11 +30,17 @@ export class ApiService {
     return this.shortenLink(path).pipe(mergeMap(response => {
       const shortenURL = response['data'].url;
       console.log('shortenURL ====> ', shortenURL);
+      console.log('bitly response ==> ', response);
+
       if (method === 'POST') {
         // this produces a 301 Error (the requested resource has been permanently moved to a new URL) due to the
         // nature of bitly specifically for redirections of urls
         // return this.http.post(shortenURL, null , { headers: this.headers});
         return this.http.post(this.combined_cors_api_url + path, null , { headers: this.headers, params: params });
+      } else if (method === 'GET') {
+        // using the bitly api shortenURL
+        console.log('Headers ====> ', this.headers);
+        return this.http.get(this.combined_cors_api_url + path, { headers: this.headers });
       }
     }));
     // Then we can add the other methods here below ....
